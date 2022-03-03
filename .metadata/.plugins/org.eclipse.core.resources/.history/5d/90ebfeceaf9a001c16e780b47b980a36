@@ -1,0 +1,20 @@
+package anno4;
+import javax.annotation.Resource;//@Resource와 연관이 있는 클래스
+
+public class HomeController2 {
+
+	private Camera camera;
+
+	@Resource(name="camera5")
+	public void setCamera(Camera camera) {//id가 camera3인 클래스 객체를 찾아서 저장
+		this.camera = camera;
+		System.out.println("setCamera()호출됨");
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "HomeController[camera2="+camera2+" ,camera3="
+											+camera3+" , camera4="+camera4+"]";
+	}
+}

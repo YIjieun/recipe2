@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>06.hover.html</title>
+<style>
+	.reverse {background:black;color:white}
+</style>
+<script>
+  $(function(){
+	  /*
+	  형식) $('선택자').hover(1.mouseover|function(){},2.mouseout | function(){})
+	  //mouseouver와 mouseout을 번갈아 가면서 호출해주는 함수->hover
+	  $(event.target)->event객체를 매개변수로 받아와서 작성
+	  */
+	  
+	  $('h1').hover(function(){//mouseover
+		  //$(event.target) ->event객체를 매개변수로 받아올것.
+		  $(this).addClass('reverse')
+	  },function(){//mouseout
+		  $(this).removeClass('reverse')
+	  })
+  })
+  //function test(){}
+  //function test2(){}
+</script>
+</head>
+<body>
+ <h1>hover test-0</h1>
+ <h1>hover test-1</h1>
+ <h1>hover test-2</h1>
+</body>
+</html>

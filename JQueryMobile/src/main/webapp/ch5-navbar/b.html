@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,
+                                                   maximum-scale=1.0,minimum-scale=1.0,
+                                                   user-scalable=no">
+<title>jQuery Mobile예제</title>
+<link href="../mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+<script type="text/javascript" src="../mobile/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../mobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div  data-role="page">
+	<div data-role="header">
+	   <h1></h1>
+	</div>
+	<!-- 
+	  1.실시간 검색=>data-filter="true" (필터적용)
+	  2.listview(전화번호부)항목의 구분선=>data-role="list-divider"
+	 -->
+	<div data-role="content">
+	    <ul data-role="listview" data-filter="true">
+	        <li data-role="list-divider">Divider(구분선)</li>
+	        <li><a href="#">방화</a></li>
+	        <li><a href="#">개화산역</a></li>
+	        <li><a href="#">김포공항</a></li>
+	        <li><a href="#">송정</a></li>
+	        <li><a href="#">마곡</a></li>
+	        <li><a href="#">발산</a></li>
+	    </ul>
+	</div>
+	<!-- 네비게이션바 추가 -->
+   <div data-role="footer" data-id="persistFooter"  data-position="fixed">
+	   <div data-role="navbar">
+	      <ul>
+	         <li><a href="a.html" data-icon="plus">회원가입</a></li>
+	         <li><a href="b.html" data-icon="search"
+	                    class="ui-btn-active ui-state-persist">검색</a></li>
+	         <li><a href="c.html" data-icon="gear">목록보기</a></li>
+	      </ul>
+	   </div>
+	</div>
+</div>
+</body>
+</html>

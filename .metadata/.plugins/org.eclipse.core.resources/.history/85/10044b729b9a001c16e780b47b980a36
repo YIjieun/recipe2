@@ -1,0 +1,11 @@
+package anno3;
+/*
+ *@Resource - byName(이름으로 찾아서 자동으로 객체를 넣어주는 개념)
+ *@Autowired - byType(같은 자료형을 찾아서 자동으로 넣어주는 개념) 
+ */
+public class HomeController {
+
+	private Camera camera2;
+	private Camera camera3;
+	private Camera camera4;
+}

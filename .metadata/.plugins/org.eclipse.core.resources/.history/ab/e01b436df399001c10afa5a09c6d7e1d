@@ -1,0 +1,19 @@
+package studentdb;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1.xml파일을 메모리에 올리는 작업
+		ApplicationContext context=
+								new ClassPathXmlApplicationContext("/studentdb/Bean.xml");
+		//2.xmll->getBean(id 또는 name값)
+		StudentJDBCTemplate st=(StudentJDBCTemplate)context.getBean("studentJDBCTemplate");
+		//DB연동이 끝난상태->insert,update,delete,select->리턴받아서 출력
+		System.out.println("st=>"+st);
+		st.create(1, "홍길동", 23);
+	}
+}

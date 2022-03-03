@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>04.$.ajax().xml.html</title>
+<!--  getXml.jsp 
+<people>
+  <person>
+      <name>홍길동</name>
+      <job>학생</job>
+      <age>23</age>
+  </person>
+  <person>
+      <name>테스트</name>
+      <job>웹프로그래머</job>
+      <age>27</age>
+  </person>
+  <person>
+      <name>임시</name>
+      <job>직장인</job>
+      <age>34</age>
+  </person>
+</people>
+ -->
+<script>
+  $(function(){
+	  //1.url요청문서 ,2.매개변수를 전달(생략이 가능) {매개변수명:값~} 3.콜백함수(서버의 데이터를 받는역할)
+	 //$.ajax('getXml.jsp',function(data){})
+	  $.ajax('getXml.jsp',{
+		  //data:~ 매개변수가 없으니깐 생략
+		  success:function(data){
+			  //분리작업(=파싱분리) parse->find() or filter()
+			  $(data).find('person').each(function(){//for문역할
+				  var name='<li>'+$(this).find('name').text()+'</li>'
+				  var job='<li>'+$(this).find('job').text()+'</li>'
+				  var age='<li>'+$(this).find('age').text()+'</li>'
+				  //<div>에 결합해서 화면에 출력
+				  $('#output').append('<ul>'+name+job+age+'</ul>')
+			  })//each
+		  },//success
+		  error:function(){
+			  alert('서버요청실패')
+		  }
+	  })//$.ajax 
+  })
+</script>
+</head>
+<body>
+	<div id="output">
+	   <!-- 
+	   <ul>
+	       <li>홍길동</li>
+	       <li>학생</li>
+	       <li>23</li>
+	       ,,,
+	   </ul>  -->
+	</div>
+</body>
+</html>

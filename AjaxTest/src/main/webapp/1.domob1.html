@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1.domob1.html(자바스크립트의 객체 생성 방법)</title>
+<script>
+//1. 함수를 이용해서 객체를 생성 2. 동적 맴버변수를 생성( 선언X  바로사용 O)->컴파일 과정X
+//형식) function 함수명(매개변수,,,,)->자바의 생성자처럼 이용해서 객체를 생성
+function Student(name,grade,sung,addr){
+	//public Student(String name, String grade, String sung, String addr)->자바일 경우
+	//this.속성명(=멤버변수)=값
+	this.name=name;//this.name="홍길동";
+	this.grade=grade;//this.grade=1;
+	this.sung=sung;//this.sung="남";
+	this.addr=addr;//this.addr="서울시 강남구 세경빌딩 3층";
+}
+</script>
+</head>
+<body>
+<script>
+	//객체생성 => 클래스명 객체명=new 클래스명(=생성자)(); 자바
+	//					  X	  객체명=new 함수명(매개변수,,,,)
+	hong=new Student("홍길동",1,"남","서울시 강남구 세경빌딩 3층");
+	alert(hong.name+","+hong.grade+","+hong.sung+","+hong.addr);
+	</script>
+</body>
+</html>

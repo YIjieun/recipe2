@@ -1,0 +1,17 @@
+package com.spring.anno1;
+
+public class Camera extends Object{
+	
+	private int number;//카메라수
+
+	public void setNumber(int number) {
+		this.number = number;
+		System.out.println("setNumver()호출됨!");
+	}
+	//메소드이름 위에 기술=>메서드명이 오버라이딩이 된 메서드인지 확인해주는 기능을 가진 어노테이션
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Camera[number="+number+"]";
+	}
+}

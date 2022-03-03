@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>12.$.serialize().html</title>
+<!-- 회원가입할때 이 함수를 이용  -->
+<script>
+  $(function(){
+	  $('#submit').click(function(){
+		 // var form_data=$('form').serialize()
+		  var form_data=$('form').serializeArray()
+		  $('#result').empty() //전의 내용 지우고 새로운 내용을 추가하기위해 전의 데이터 삭제
+		  //[{seq:1,username='테스트',,,}]=>Json형식->searlalizeArry()
+		 // var form_data=$('form').serializeArray()//json형식
+		  //(1)입력받은 값을 서버에 전송하기전에 확인절차
+		  /*
+		  $.each(form_data,function(index,items){//폼의 입력받은 순서->인덱스번호
+			  $('#result').append(items.name+"="+items.value+"<br>")//항목=저장할값
+		  })
+		  
+		  (2)
+		  var form_data=$('form').serialize()
+		  $('#result').text( form_data)
+		  //매개변수명=전달할값&매개변수명2=값2,,,,,
+		  //seq=1&username=%EC%9E%84%EC%8B%9C&password=1234&hobby=yoga&hobby=reading
+		  */
+		  //(3) 서버에 요청
+		  $.post('form.jsp',form_data,function(args){
+			  $('#result').html(args)
+		  })
+	  })
+  })
+</script>
+</head>
+<body>
+<!--  
+   {매개변수명:전달할값,매개변수명2:전달할값,,,}
+   폼에 입력한 데이터를 JSON형식의 문자열로 변환->전송함수(serializeArray()) ,serialize() 의 차이점
+
+-->
+  <form>
+    <input type="hidden" name="seq"  value="1">
+    <label>이름을 입력하세요:</label>
+    <input type="text" name="username"><br>
+    <label>암호를 입력하세요:</label>
+    <input type="password" name="password"><br>
+    <input type="checkbox" name="hobby" value="music">music
+    <input type="checkbox" name="hobby" value="yoga">yoga
+    <input type="checkbox" name="hobby" value="reading">reading<br>
+    <input type="button" id="submit" value="전송">
+  </form>
+  <hr>
+  <div id="result"></div>
+</body>
+</html>

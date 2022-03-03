@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="true"/>
+	<item key="J2EE_EXPORT_SOURCE" value="true"/>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v9.0"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\webtest\4조프로젝트\TeamProject(recipe2).war"/>
+		<item value="C:\webtest\4조프로젝트\CookRecipe.war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\15일차(모델2 게시판의 글상세보기,글수정,글삭제하기까지 구현)\2.모델2 글수정까지 구현\JspBoard2.war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\14일차(모델2 게시판의 글목록보기(2),글쓰기구현)\3.모델2로 작성한 게시판의 글 목록보기까지 구현\JspBoard2.war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\14일차(모델2 게시판의 글목록보기(2),글쓰기구현)\2.모델2로 개발하기위한 환경설정끝\JspBoard2.war"/>
+	</list>
+	<list key="J2EE_IMPORT_null">
+		<item value="C:\webtest\4조프로젝트\TeamProject(free_board).war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\14일차(모델2 게시판의 글목록보기(2),글쓰기구현)\3.모델2로 작성한 게시판의 글 목록보기까지 구현\JspBoard2.war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\13일차(jstl 마무리 및 모델2의 개요 및 작성법)\13일차(jstl 마무리 및 모델2의 개요 및 작성법) (종합)\2.모델2의 개념예제구현\ServletTest2.war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\12일차(모델1의 글삭제마무리 및 jstl,el개요 및 작성법)\12일차(모델1의 글삭제마무리 및 jstl,el개요 및 작성법)(최종)\1.게시판의 글삭제까지 구현\JspBoard.war"/>
+		<item value="C:\webtest\final 프로젝트자료(강사용)\3.쇼핑몰 구축프로젝트\shopping.war"/>
+		<item value="C:\webtest\4.jsp\2.back-end\8일차(회원가입,회원수정,회원탈퇴 구현)\8일차(회원가입,회원수정,회원탈퇴 구현) (최종마무리)\3.회원수정까지 구현\JspMember.war"/>
+	</list>
+</section>

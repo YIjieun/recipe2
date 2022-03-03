@@ -1,0 +1,727 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="naver-site-verification" content="18bdc3dc46dbae0f857410fdfcf5cc196b17f3c2" />
+  <meta name="naver-site-verification" content="8503eafea1f83fb89028bd0bcbd38cd7d826e6e8" />
+  <meta name="description" content="쿡민레시피에서 나만의 레시피를 팔고 좋아하는 레시피를 구매하자. 등록한 레시피는 평생 연금!">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="쿡민레시피">
+  <meta property="og:description" content="쿡민레시피에서 나만의 레시피를 팔고 좋아하는 레시피를 구매하자. 등록한 레시피는 평생 연금!">
+  <meta property="og:image" content="https://cookminrecipe.com/images/clogo-n.svg">
+  <meta property="og:url" content="https://cookminrecipe.com/">
+  <title>쿡민레시피</title>
+  <link rel='stylesheet' href='../stylesheets/normalize.css' />
+  <link rel='stylesheet' href='../stylesheets/style.css' />
+  <link rel="stylesheet" href="../stylesheets/swiper.min.css">
+  <link rel="stylesheet" href="../stylesheets/swiper.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+  <script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "bdfa0906f3b110";
+    if (window.wcs) {
+      wcs_do();
+    }
+  </script>
+</head>
+
+
+
+
+<body>
+  <div id="wrap">
+    <div class="headerCon">
+      <div class="headerTop">
+        <ul class="headerMenu">
+          
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            
+
+        </ul>
+      </div>
+    </div>
+    <div class="m_headerCon">
+    <ul class="m_topMenu">
+        <li><a class="logoB" href="/"><img class="logo" src="../images/cooklogo.jpg" /></a></li>
+        <li>
+            <form class="searchF" action="/search" method="GET">
+                <input type="search" name="keyword" class="search" placeholder="레시피를 검색 해보세요." />
+                <input type="submit" style="display:none;" />
+            </form>
+            <script>
+                $(document).ready(function () {
+                    var keyword = getParameter("keyword");
+
+                    if (keyword) {
+                        $(".search").val(keyword);
+                    }
+                });
+                function getParameter(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+            </script>
+        </li>
+    </ul>
+    <div class="gnbRight">
+        <ul class="gnb">
+            <li><a href="/recipeplus">레시피</a></li>
+            <li><a href="/rank">커뮤니티</a></li>
+            <li><a href="/rsearch">요리검색</a></li>
+            <li><a href="/event">이벤트</a></li>
+            <!--<li><a href="/edu/detail">서비스</a></li>-->
+            <li><a href="/mypage">마이페이지</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var sc = $(".gnbRight").offset();
+        //console.log(sc);
+        //console.log($(document).scrollTop());
+
+        $(window).scroll(function () {
+            //console.log($(document).scrollTop());
+            if ($(document).scrollTop() > sc.top) {
+                $(".gnbRight").addClass("menu_fixed");
+            }
+            else {
+                $(".gnbRight").removeClass("menu_fixed");
+            }
+        });
+    });
+
+</script>
+      <div class="gnbCon">
+    <div class="gnbBox">
+        <div class="gnbLeft">
+            <a href="/"><img class="logo" src="../images/clogo-n.svg" /></a>
+            <form class="searchF" action="/search" method="GET">
+                <input type="text" name="keyword" class="search" placeholder="레시피를 검색 해보세요." />
+                <input type="submit" style="display:none;" />
+            </form>
+            <script>
+                $(document).ready(function () {
+                    var keyword = getParameter("keyword");
+
+                    if (keyword) {
+                        $(".search").val(keyword);
+                    }
+                });
+                function getParameter(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+            </script>
+        </div>
+        <div class="gnbRight">
+            <ul class="gnb">
+                <li><a href="/recipeplus">레시피</a></li>
+                <li><a href="/rank">커뮤니티</a></li>
+                <li><a href="/rsearch">요리검색</a></li>
+                <li><a href="/event">이벤트</a></li>
+                <!--<li><a href="/edu/detail">서비스</a></li>-->
+                <li><a href="/mypage">MY</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="slideCon">
+          <div class="slideBox">
+            <!-- Swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                
+                  
+                    <a href="" class="swiper-slide">
+                      <img src="../upload/ckm-1638143951558.jpg" />
+                    </a>
+                    
+                      
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="container">
+          <div class="bestTop">
+            <span class="topLine"></span>
+            <div class="indBox">
+              <p class="subTitind"><a href="/recipeplus">레시피+ Top Recipe</a></p>
+              <p class="subMore"><a href="/recipeplus"><img class="r_arrow" src="../images/r_arrow.svg" /></a></p>
+            </div>
+            <ul>
+
+              
+                
+
+
+                  <li>
+                    <a href="/change/VDOS1644908618">
+                      <img src="https://cookminrecipe.com/user_upload/u_1644908677552.jpg">
+                      <p class=videoTit>
+                        [꽁블] 코프타 커리
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/change/VDOS1641428364">
+                      <img src="https://cookminrecipe.com/user_upload/u_1641428497398.jpg">
+                      <p class=videoTit>
+                        [꽁블] 미로통, 프랑스 가정식 요리
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/change/VDOS1639357785">
+                      <img src="https://cookminrecipe.com/user_upload/u_1639358168201.jpg">
+                      <p class=videoTit>
+                        [꽁블] 치미추리 소스, 스테이크 굽기/셋팅
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/change/VDOS1637193548">
+                      <img src="https://cookminrecipe.com/user_upload/u_1637193597788.jpg">
+                      <p class=videoTit>
+                        [꽁블] 시금치베샤멜소스, 라자냐
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/change/VDOS1637193085">
+                      <img src="https://cookminrecipe.com/user_upload/u_1637193138209.jpg">
+                      <p class=videoTit>
+                        [꽁블] 라구 볼로네제 소스
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/change/VDOS1635461590">
+                      <img src="https://cookminrecipe.com/user_upload/u_1635468305569.jpg">
+                      <p class=videoTit>
+                        [꽁블] 바질페스토, 숏파스타 만들기
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+                    
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="container mpt-0">
+          <div class="bestTop">
+            <span class="topLine"></span>
+            <div class="indBox">
+              <p class="subTitind"><a href="/premium">프리미엄 Top Recipe</a></p>
+              <p class="subMore"><a href="/premium"><img class="r_arrow" src="../images/r_arrow.svg" /></a></p>
+            </div>
+            <ul>
+              
+                
+
+                  <li>
+                    <a href="/change/VDOS1615556125">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619065442475.jpg">
+                      <p class=videoTit>
+                        카슈미르커리
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615554509">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619065387053.jpg">
+                      <p class=videoTit>
+                        뵈프 부르기뇽
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615553781">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619065314909.jpg">
+                      <p class=videoTit>
+                        포크커리
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615552911">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619065244472.jpg">
+                      <p class=videoTit>
+                        치킨마살라
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615552306">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619065202028.jpg">
+                      <p class=videoTit>
+                        코르마커리
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615551370">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619060690434.jpg">
+                      <p class=videoTit>
+                        치킨티카마살라
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615550451">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619060636482.jpg">
+                      <p class=videoTit>
+                        양고기코르마커리
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615549676">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619060498314.jpg">
+                      <p class=videoTit>
+                        키마커리
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615548966">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619060388252.jpg">
+                      <p class=videoTit>
+                        버터치킨커리
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615539409">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619741677715.jpg">
+                      <p class=videoTit>
+                        미트볼스튜
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615517533">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619045382472.jpg">
+                      <p class=videoTit>
+                        향신오일
+                      </p>
+                    </a>
+                  </li>
+
+                  
+
+                  <li>
+                    <a href="/change/VDOS1615514991">
+                      <img src="https://cookminrecipe.com/user_upload/u_1619045332109.jpg">
+                      <p class=videoTit>
+                        리 플라프
+                      </p>
+                    </a>
+                  </li>
+
+                  
+                    
+            </ul>
+          </div>
+        </div>
+
+        <div class="container mpt-0">
+          <div class="best">
+            <span class="topLine"></span>
+            <div class="indBox">
+              <p class="subTitind"><a href="/recipe">무료 Top Recipe</a></p>
+              <p class="subMore"><a href="/recipe"><img class="r_arrow" src="/images/r_arrow.svg" /></a></p>
+              <div class="clear"></div>
+            </div>
+            <ul>
+
+              
+                
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1621578600">
+                      <img src="https://img.youtube.com/vi/WjzobmHaR00/0.jpg">
+                      <p class="videoTit">
+                        식탁을 풍성하게할 맛있는 추천 샐러드 - 우메보시 드레싱을 곁들인 튀긴 가지와 그린빈스 샐러드
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1620713171">
+                      <img src="https://img.youtube.com/vi/CH4y6g0rfh0/0.jpg">
+                      <p class="videoTit">
+                        차돌박이 샐러드(feat.고마타레)
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1619782246">
+                      <img src="https://img.youtube.com/vi/Ornvv-SS5rk/0.jpg">
+                      <p class="videoTit">
+                        커리향 새우 피망 볶음
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1619517235">
+                      <img src="https://img.youtube.com/vi/alzzNsAsfm0/0.jpg">
+                      <p class="videoTit">
+                        자숙문어와 양파 샐러드
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618643594">
+                      <img src="https://img.youtube.com/vi/HX1MMsQk0Vc/0.jpg">
+                      <p class="videoTit">
+                        건강한 밥상 추천 요리 - 건강함 듬뿍, 굴밥 [꽁블티비] 굴의 효능 듬뿍 들어있는 굴밥
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618643520">
+                      <img src="https://img.youtube.com/vi/Lf3co8bIL54/0.jpg">
+                      <p class="videoTit">
+                        [꽁블야간식당 39화]-도시락을 위한 파스타샐러드(cold pasta)
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618642651">
+                      <img src="https://img.youtube.com/vi/HHBueqLQWjo/0.jpg">
+                      <p class="videoTit">
+                        간식 걱정 끝 그릴 포테이토 샐러드 - 소세지와 감자가 듬뿍 들어있는 그릴포테이토샐러드 [꽁블tv]
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618642598">
+                      <img src="https://img.youtube.com/vi/KUdChMp4ebM/0.jpg">
+                      <p class="videoTit">
+                        [꽁블야간식당 38화]-다이어트를 위한 간편식 후무스(hummus)
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618642554">
+                      <img src="https://img.youtube.com/vi/fKdTllM-XNk/0.jpg">
+                      <p class="videoTit">
+                        간단하지만 고급진 프랑스식 감자전 - 고소하고 부드러운 감자전 레시피[꽁블티비]
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618642502">
+                      <img src="https://img.youtube.com/vi/9tP2RuxAfEA/0.jpg">
+                      <p class="videoTit">
+                        [꽁블야간식당 37화]-대파풍년 대파 브레제(braisees)
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618642424">
+                      <img src="https://img.youtube.com/vi/CKIYKlQhcPQ/0.jpg">
+                      <p class="videoTit">
+                        [꽁블야간식당 36화]-겉은바삭 속은촉촉 감자고로케-Potato croquette
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+
+
+                  <li>
+                    <a href="/recipe/detail/VDOF1618642356">
+                      <img src="https://img.youtube.com/vi/1RGOlSCLMtI/0.jpg">
+                      <p class="videoTit">
+                        달콤하고 부드러운 고구마사과스프 - 면역력 강화에 좋은 고구마 수프 사과수프 레시피[꽁블티비]
+                      </p>
+                    </a>
+                  </li>
+
+
+                  
+                    
+
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+    <div class="footerBox">
+        <div class="footerLeft">
+            <span class="ck">Cookmin Recipe</span>
+            <ul class="ftmenu1">
+                <li><a href="/about">회사소개</a></li>
+                <!--<li><a href="#">채용</a></li>-->
+            </ul>
+            <ul class="ftmenu2">
+                <li><a href="/terms" target="_blank">이용약관</a></li>
+                <li><a href="/privacy" target="_blank">개인정보취급방침</a></li>
+                <li><a href="https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2020409035430201403&pageUnit=10&searchCnd=wrkr_no&searchKrwd=4082821450&pageIndex=1"
+                        target="_blank">사업자정보확인</a></li>
+                <li><a href="/pdfs/cookmin_rule.pdf" target="_blank">쿡민레시피 규정</a></li>
+                <li><a href="/pdfs/cookmin_guide.pdf" target="_blank">쿡민레시피 가이드라인</a></li>
+            </ul>
+        </div>
+        <div class="footerRight">
+
+            <div class="ftR">
+                <p class="customer">고객센터<span class="cthour">오전 10시~오후6시(주말, 공휴일 제외)</span></p>
+                <button type="button" class="kakaoCS" id="kakao-talk-channel-chat-button">카카오톡 문의하기</button>
+            </div>
+            <p class="footerTxt">
+                더쿡민 | 대표: Hoon Lee | 개인정보보호책임자: Hoon Lee | 사업자등록번호: 408-28-21450<br />통신판매업신고:
+                2020-경기김포-1416 | 사업장: 경기도 김포시 김포한강로2로 113 | 고객센터: thecookmin@kakao.com<br /><br />
+                더쿡민은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 더쿡민의 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
+            </p>
+            <p class="m_footerTxt">
+                더쿡민 | 대표: Hoon Lee | 개인정보보호책임자: Hoon Lee | 사업자등록번호: 408-28-21450 통신판매업신고:
+                2020-경기김포-1416 | 사업장: 경기도 김포시 김포한강로2로 113 | 고객센터: thecookmin@kakao.com<br /><br />
+                더쿡민은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 더쿡민의 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="m_footer_menu">
+    <ul>
+        <li><a href="/"><img class="icon" src="/images/home.svg" /><span>홈</span></a></li>
+        <li><a href="/rsearch"><img class="icon" src="/images/loupe.svg" /><span>요리검색</span></a></li>
+        <li><a href="/mypage"><img class="icon" src="/images/user.svg" /><span>마이페이지</span></a></li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {
+        var path = window.location.pathname;
+        if (path === "/") {
+            $(".m_footer_menu ul li:nth-child(1) a span").css("color", "#e86416");
+        } else if (path === "/rsearch") {
+            $(".m_footer_menu ul li:nth-child(2) a span").css("color", "#e86416");
+        } else if (path === "/mypage") {
+            $(".m_footer_menu ul li:nth-child(3) a span").css("color", "#e86416");
+        }
+    });
+
+
+
+
+</script>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type='text/javascript'>
+        $("#kakao-talk-channel-chat-button").click(function () {
+            Kakao.init('7ceb4d9066e68ec5e77c2dd75c5652e6');
+
+            Kakao.Channel.chat({
+                channelPublicId: '_pMxfxkK'
+            });
+        });
+
+    </script>
+    <script data-ad-client="ca-pub-4224126319810269" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4E9E2CBKRB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-4E9E2CBKRB');
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4E9E2CBKRB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4E9E2CBKRB');
+</script>
+
+  </div>
+
+  <!--wrap end-->
+
+  <!-- Swiper JS -->
+  <script src="/javascripts/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true,
+      },
+      autoplay: { // 자동 재생
+        delay: 6000, // 딜레이 0
+      },
+    });
+  </script>
+  
+<script>
+     $(document).ready(function () {
+          var popCookie = getCookie("popupCookie");
+
+           if (!popCookie) {
+                $(".popup").show();
+              } else {
+                $(".popup").hide();
+              }
+            });
+
+            $(".h24").click(function () {
+              setCookie("popupCookie", "popup1");
+              $(".popup").hide();
+            });
+
+            function setCookie(name, value) {
+              var todayDate = new Date();
+              todayDate.setHours(24);
+              document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+            }
+
+            function getCookie(cookieName) {
+              var cookieValue = null;
+              if (document.cookie) {
+                var array = document.cookie.split((escape(cookieName) + '='));
+                if (array.length >= 2) {
+                  var arraySub = array[1].split(';');
+                  cookieValue = unescape(arraySub[0]);
+                }
+              }
+              return cookieValue;
+            }
+          </script>
+</body>
+
+</html>

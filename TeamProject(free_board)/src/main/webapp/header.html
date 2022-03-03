@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>header</title>
+	 <link rel='stylesheet' href='stylesheets/normalize.css' />
+    <!-- 부트스트랩 -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='stylesheets/style.css' />
+  </head>
+  <body>
+
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="js/bootstrap.min.js"></script>
+    <div id="header">
+     <div class="headerCon">
+      <div class="headerTop">
+        <ul class="headerMenu">
+          
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">마이페이지</a></li>
+
+        </ul>
+      </div>
+    </div>
+    
+   <div class="m_headerCon">
+    <ul class="m_topMenu">
+         <!-- <li><a class="logoB" href="/"><img class="logo" src="../images/clogo-n.svg" /></a></li> -->
+          <li><a class="logoB" href="/"><img class="logo" src="images/cookk_png.png" /></a></li>
+        <li>
+            <form class="searchF" action="/search" method="GET">
+                <input type="search" name="keyword" class="search" placeholder="레시피를 검색 해보세요." />
+                 <input type="image" name="submit" value="submit" src="images/search_png.png" 
+                 						style="width:30px; margin-left:3px; vertical-align:middle"/>
+            </form>
+            <script>
+                $(document).ready(function () {
+                    var keyword = getParameter("keyword");
+
+                    if (keyword) {
+                        $(".search").val(keyword);
+                    }
+                });
+                function getParameter(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+            </script>
+        </li>
+    </ul>
+    
+    <div class="gnbRight">
+        <ul class="gnb">
+            <li><a href="/recipe1">레시피1</a></li>
+            <li><a href="/recipe2">레시피2</a></li>
+            <li><a href="/freeboard">자유게시판</a></li>
+            <li><a href="/event">이벤트</a></li>
+            <!--<li><a href="/edu/detail">서비스</a></li>-->
+          <!--   <li><a href="/mypage">마이페이지</a></li> -->
+        </ul>
+    </div>
+</div><!-- m_headerCon -->
+
+<script>
+    $(document).ready(function () {
+        var sc = $(".gnbRight").offset();
+        //console.log(sc);
+        //console.log($(document).scrollTop());
+
+        $(window).scroll(function () {
+            //console.log($(document).scrollTop());
+            if ($(document).scrollTop() > sc.top) {
+                $(".gnbRight").addClass("menu_fixed");
+            }
+            else {
+                $(".gnbRight").removeClass("menu_fixed");
+            }
+        });
+    });
+
+</script>
+      <div class="gnbCon">
+    <div class="gnbBox">
+        <div class="gnbLeft">
+      <!--  <a href="/"><img class="logo" src="../images/clogo-n.svg" /></a> -->
+             <a href="/"><img class="logo" src="images/cookk_png.png" /></a>
+            <form class="searchF" action="/search" method="GET">
+                <input type="text" name="keyword" class="search" placeholder="레시피를 검색 해보세요." />
+                 <input type="image" name="submit" value="submit" src="images/search_png.png" 
+                 						style="width:30px; margin-left:3px; vertical-align:middle"/>
+            </form>
+            <script>
+                $(document).ready(function () {
+                    var keyword = getParameter("keyword");
+
+                    if (keyword) {
+                        $(".search").val(keyword);
+                    }
+                });
+                function getParameter(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+            </script>
+        </div>
+        
+        <div class="gnbRight">
+            <ul class="gnb">
+                <li><a href="/recipe1">레시피1</a></li>
+	            <li><a href="/recipe2">레시피2</a></li>
+	            <li><a href="/freeboard">자유게시판</a></li>
+	            <li><a href="/event">이벤트</a></li>
+                <!--<li><a href="/edu/detail">서비스</a></li>-->
+                <!-- <li><a href="/mypage">MY</a></li> -->
+            </ul>
+        </div>
+    
+    </div><!-- gnbBox -->
+</div> <!-- gnbCon -->
+
+      
+    
+    </div><!-- header -->
+    
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap 예제</title>
+
+    <!-- 부트스트랩 -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js 
+    	IE의 버전이 낮은 경우에는 html5에 대한 태그가 인식 X->인식을 시켜주는 옵션
+    -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1 class="text-success text-center">네비게이션바 구현 </h1>
+       <div class="container">
+         <nav class="navbar navbar-default" role="navigation"><!-- 상단메뉴 및 서브메뉴포함된 bar생성 -->
+           <div class="navbar-header">
+               <button type="button" class="navbar-toggle"
+                                                 data-toggle="collapse"
+                                                 data-target=".navbar-ex1-collapse">
+                   <span class="icon-bar"></span>
+               </button>
+              <!-- <a class="navbar-brand" href="#"></a> -->
+              <a class="navbar-brand glyphicon" href="main.jsp"> 
+                          <span class="glyphicon glyphicon-home"></span>
+			  </a>
+           </div>
+           <div class="collapse navbar-collapse navbar-ex1-collapse">
+               <ul class="nav navbar-nav">
+                   <li class="dropdown">
+			         <a data-toggle="dropdown" href="#">사용자
+			             <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			             <li><a   href="#">회원로그인</a></li>
+			             <li><a   href="#">자유게시판</a></li>
+			             <li><a   href="#">설문조사</a></li>
+			          </ul>
+                   </li>
+                   <!-- 드롭다운 부분을 추가2 -->
+                   <li class="dropdown">
+			         <a data-toggle="dropdown" href="#">관리자
+			             <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			             <li><a   href="#">관리자로그인</a></li>
+			             <li><a   href="#">공지사항</a></li>
+			             <li><a   href="#">통계처리</a></li>
+			          </ul>
+                   </li>
+                   <!-- 드롭다운 부분을 추가3 -->
+                   <li class="dropdown">
+			         <a data-toggle="dropdown" href="#">Q&A
+			             <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			             <li><a   href="#">자료실</a></li>
+			             <li><a   href="#">자유게시판2</a></li>
+			             <li><a   href="#">설문조사2</a></li>
+			          </ul>
+                   </li>                  
+               </ul>
+               </div>
+               </nav>   
+        </div>
+
+
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

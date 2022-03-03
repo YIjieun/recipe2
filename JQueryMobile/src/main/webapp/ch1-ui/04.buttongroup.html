@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,
+													maximum-scale=1.0,minimum-scale=1.0,
+													user-scalable=no">
+<title>jQuery Mobile예제</title>
+<link href="../mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+<script type="text/javascript" src="../mobile/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../mobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<!-- 
+       data-role="controlgroup" 버튼을 수직 또는 수평으로 그룹(수직이 기본)
+       data-type="horizontal | vertical"(수평,수직을 결정)
+   -->
+     <div  data-role="page">
+            <div data-role="header">
+                   <h1>버튼의 그룹</h1>
+            </div>
+           <div data-role="content">
+                   <div data-role="controlgroup"><!-- 기본(수직) -->
+                     <a href="#" data-role="button" data-icon="back">back버튼</a>
+                     <a href="#" data-role="button" data-icon="forward">forward버튼</a>
+                     <a href="#" data-role="button" data-icon="refresh">refresh버튼</a>
+                   </div>
+                   
+                   <div data-role="controlgroup" data-type="horizontal">
+                     <a href="#" data-role="button" data-icon="back">back버튼</a>
+                     <a href="#" data-role="button" data-icon="forward">forward버튼</a>
+                     <a href="#" data-role="button" data-icon="refresh">refresh버튼</a>
+                   </div>
+            </div>
+	<div data-role="footer">
+		<h1>화면하단</h1>
+	</div>
+</div>
+</body>
+</html>

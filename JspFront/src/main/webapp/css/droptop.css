@@ -1,0 +1,74 @@
+/*
+  droptop.css
+  드롭다운 메뉴
+*/
+/* 1레벨 메뉴*/
+.dropdownmenu > li {/* 부보태그 > 자식태그(부모태그 밑의 자식태그) 영역 */
+ float:left; /* 왼쪽부터 정렬*/
+ position:relative; /* 기준점을 지정->오른,아래 특정위치에 배치(상대적인 좌표값) */
+                           /* absolute (같은위치에 여러개의 메뉴가 겹친다. */
+ background:#67b0d1;
+ width:25%;/* 전체 100%/4메뉴 */
+}
+.dropdownmenu > li >a { /* 상단 메뉴의 글자부분*/
+  display:block;/* 무조건 한줄은 점유 다음줄로 개행  */
+  font-size:16px;
+  color:#ffffff; /* 글자색은 흰색*/
+  text-align:center;/* 글자 가운데 배치*/
+  height:60px; /*높이 */
+  line-height:60px; /* 텍스트 행 사이의 간격에 사용*/
+}
+/*  1레벨 메뉴에 마우스를 올렸을때의 배경색을 지정(형식) 대상자(1단계메뉴):hover) */
+.dropdownmenu > li:hover{
+  background:#7bbbd7;
+}
+/* 1레벨 메뉴에 마우스를 올렸을때 하위메뉴(2~)의 위치 설정*/
+.dropdownmenu > li:hover > ul{
+ top:60px; /* 상단메뉴의 폭 바로밑에 나올수 있는 거리 */
+ left:0;
+}
+
+/* 2~4레벨 메뉴 부터의 속성 */
+.dropdownmenu  ul { /*부모태그 자식태그(자식태그밑의 손자태그까지 적용) */
+  position:absolute;
+  top:-9999px; /* 위쪽으로 완전히 감추기*/
+  z-index:9999;/* 하위메뉴와 동영상과의 겹치는 부분에서 우선적으로 메뉴를 나오게 설정 */
+  width:140px; /* 하위메뉴의 범위 */
+  border:1px solid #cccccc;
+}
+/*2레벨 메뉴의 위치 속성 지정 */
+.dropdownmenu  ul li {
+  position:relative;/* 2->3->4*/
+}
+/*2레벨 메뉴의 텍스트속성,배경색,여백지정*/
+.dropdownmenu  ul a{
+   display:block;
+   color:#aaaaaa;
+   font-size:12px;
+   line-height:40px;
+   background:#ffffff;
+   padding-left:20px;/* border와 메뉴사이의 들여쓰기 거리(왼쪽메뉴) */
+}
+/*
+/*2레벨 메뉴에 마우스를 갖다될때 배경색 변경 */
+.dropdownmenu  ul a:hover{
+  color:#ffffff; /*흰색*/
+  background:#67b0d1;
+}
+/* 2레벨 메뉴항목을 마우스를 갖다될때 li태그 밑에 ul태그 설정*/
+.dropdownmenu  ul li:hover > ul{ /* 3레벨 이하 */
+  position:absolute;/*정확하게 좌표값을 설정할때 사용*/
+  top:0;/*y축은 변화없음 그대로 위치*/
+  left:100%;/* 2레벨메뉴와 3레벨메뉴의 겹치는 부분 
+                    2레벨과 3레벨이 겹치는경우(0) 
+					2레벨과 3레벨이 반이 겹치는 (50%)
+					100% 2레벨왼쪽에 3레벨메뉴가 배치가된다.*/
+}
+
+/*상단메뉴를 맨 촤측에 고정(위치)*/
+body,ul {
+  margin:0; /*밖의 여백*/
+  padding:0;/*안쪽 여백*/
+}
+ul {list-style:none;}  /* 마커없음 */
+a {text-decoration:none;} /* 밑줄 없음*/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title> 09.select.html</title>
+<script>
+$(function(){
+	  //요소:selected=>select태그의 option객체중에서 선택된 태그를 가리킬때 사용
+	  /*
+	  1.setTimeout(호출할 함수명 | 익명함수,초단위(1000))->1초->한번만 실행
+	  2.setInterval(호출할 함수명 | 익명함수,초단위(1000))->1초->계속 반복해서 실행
+	  */
+	  setInterval(function(){
+		  var value=$('select > option:selected').val();
+		  alert(value);
+		  console.log(value);//크롬 요소검사의 console창에 찍힘.
+	  },5000);//5초뒤에 선택한 항목을 화면에 출력시켜라  
+	  
+})
+</script>
+</head>
+<body>
+	<h1>jQuery 예제</h1>
+	<select>
+		<option>화면구현</option>
+		<option>오라클</option>
+		<option>자바</option>
+		<option>JSP</option>
+		<option>Git/GitHub</option>
+		<option>JQuery</option>		
+	</select> 
+</body>
+</html>

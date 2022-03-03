@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,
+													maximum-scale=1.0,minimum-scale=1.0,
+													user-scalable=no">
+<title>jQuery Mobile예제</title>
+<link href="../mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+<style>
+	    .ui_button-width{/*임의로 버튼의 넓이를 지정*/
+	    	width:200px;
+	    }
+	    .ui-table-width{ /*테이블 내부의 버튼의 넓이를 지정*/
+	    	width:100%;
+	    }
+</style>
+<script type="text/javascript" src="../mobile/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../mobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+	<div data-role="header">
+		<h1>form 입력폼</h1><!-- data-iconpos="notext" (버튼의 이미지만 출력) -->
+		 <a href="#" data-icon="home" data-iconpos="notext">Home</a>
+         <a href="#" data-icon="search" data-iconpos="notext">Search</a>
+	</div>
+	<!--bootstrap(class="form-group") 대신에 data-role="fieldcontain"을 준다. -->
+	<div data-role="content">
+		<!-- 이름 -->
+		<div data-role="fieldcontain">
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name">
+		</div>
+		<!-- 경력사항  bootstrap과 다르게 cols="n"도 지정 가능-->
+		<div data-role="fieldcontain">
+			<label for="textarea">경력사항</label>
+			<textarea rows="8" cols="40" name="textarea" id="textarea"></textarea>
+		</div>
+		<!-- 검색(검색 전용 입력란n (내부에 검색표시, 글자를 지울 수 있는 X표시 마크 생성) -->
+		<div data-role="fieldcontain">
+			<label for="search">검색</label>
+			<input type="search" name="search" id="search">
+		</div>
+		<!--
+			WiFi(Flip Switch)(on/off) data-role="slider"(전원스위치 생성기능)
+		  -->
+		  <div data-role="fieldcontain">
+			<label for="switch">WiFi:</label>
+			<select name="switch" id="switch" data-role="slider">
+				<option value="off">Off</option>
+				<option value="on">On</option>
+			</select>
+		</div>
+		<!-- 슬라이드바 생성 (data-highlight="true"선택배경을 파란색으로 설정-->
+		<div data-role="fieldcontain">
+			<label for="slider">SliderBar</label>
+			<input type="range" name="slider" id="sider" value="0"
+						min="0" max="100" data-highlight="true">
+		</div>
+		<!-- 다중선택 -->
+		<div data-role="fieldcontain">
+			 <fieldset><!-- 선택할 부분을 묶어주는 역할 -->
+				<legend>취업 희망 직업</legend>
+				<input type="checkbox" name="checkbox" id="checkbox-a"
+							value="웹프로그래머">
+							<label for="checkbox-a">웹프로그래머</label>
+				<input type="checkbox" name="checkbox" id="checkbox-b"
+							value="빅데이터분석가">
+							<label for="checkbox-b">빅데이터분석가</label>
+			</fieldset>
+		</div>
+		<!-- checkbox을 수평으로 정렬(작게 설정) data-mini="true"(컴포넌트를 작게 설정) -->
+			 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+				<legend>글자스타일 모양</legend>
+				<input type="checkbox" name="checkbox" id="checkbox-1"
+							value="B">
+							<label for="checkbox-1">B</label>
+							
+				<input type="checkbox" name="checkbox" id="checkbox-2"
+							value="I">
+							<label for="checkbox-2">I</label>
+							
+				<input type="checkbox" name="checkbox" id="checkbox-3"
+							value="U">
+							<label for="checkbox-3">U</label>
+							
+			</fieldset>
+			<!-- 
+				콤보박스
+				data-native-menu="false" 원래 html 스타일을 사용하지 않고 
+				jQueryMobile에 적합한 스타일을 사용하겠다는 옵션 
+			-->
+			<div data-role="fieldcontain">
+			<label for="select-choice-a">좋아하는 과목을 선택</label>
+			<select name="select-choice-a" id="select-choice-a"
+						data-native-menu="false">
+				<option>아래에서 선택</option>
+				<option value="java언어">java언어</option>
+				<option value="오라클">오라클</option>
+				<option value="JSP">JSP</option>
+				<option value="jQuery">jQuery</option>
+				<option value="Bootstrap">Bootstrap</option>
+			</select>
+		</div>
+		<!-- 전송버튼, 리셋버튼 -->
+       <table class="ui-table-width">
+       		<tr>
+       			<td><a href="#" data-role="button">가입</a></td>
+       			<td><a href="#" data-role="button">재입력</a></td>
+       		</tr>
+       </table>
+	</div>
+	<!-- 
+           각 페이지마다 footer 네비게이션바가 공통으로 사용할 수 있도록 설정
+           선택상태를 유지할 필요성->data-id 지정,data-position="fixed" 지정
+           디폴트 선택버튼의 class 속성->ui-btn-active(활성화),ui-state-persist 지정(상태유지)
+       -->     
+     <div data-role="footer" data-id="persistFooter" data-position="fixed">
+         <div data-role="navbar">
+                <ul>
+                      <li><a href="a.html" data-icon="plus"
+                                  class="ui-btn-active ui-state-persist">회원가입</a></li>
+                      <li><a href="b.html" data-icon="search">검색</a></li>
+                      <li><a href="c.html" data-icon="gear">목록보기</a></li>
+                </ul>
+           </div>
+      </div>
+</div>
+</body>
+</html>

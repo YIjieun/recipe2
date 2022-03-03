@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+<!--1.DB연결(dataSource)driver,url,username,password지정(DB연결 4개의 구성요소  -->
+<bean id="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+     <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+     <property name="url"    value="jdbc:oracle:thin:@localhost:1521:orcl2" />
+     <property name="username"    value="scott" />
+     <property name="password"    value="tiger" />
+ </bean>
+
+<!--2.DB연결시켜서 가져올 수 있는 빈즈객체  
+		public void setDataSource(DataSource ds){this.ds=ds;}
+-->
+<bean id="studentJDBCTemplate"  class="studentdb.StudentJDBCTemplate">
+    <property name="ds" ref="dataSource" /> 
+</bean>
+
+</beans>
+
+
+
+
+

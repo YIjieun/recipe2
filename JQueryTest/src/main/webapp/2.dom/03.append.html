@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>03.append.html</title>
+<script>
+  $(function(){
+	  /*
+	         함수             설명
+	    $(A).appendTo(B)->A를 B의 기존자식의 뒤에 추가할때 사용
+	    $(A).prependTo(B)->A를 B의 기존자식의 앞에 추가할때 사용
+	    
+	    $(A).insertAfter(B)->A를 B뒤에 추가할때 사용
+	    $(A).insertBefore(B)->A를 B앞에 추가할때 사용
+	  */
+	 //(1) $('<h1>jQueryTest</h1>').appendTo('div');//div태그의 기존자식뒤에 추가
+	 //(2) $('<h1>jQueryTest</h1>').prependTo('div');//div태그의 기존자식의 앞에 추가
+	 //(3) $('<h1>DOMTest</h1>').insertAfter('div');//h1태그자식을 div태그뒤에 추가
+	   $('<h1>DOMTest</h1>').css('color','red').insertBefore('div');//(4)div태그 앞에 추가
+	  $('img').attr('width',300).insertBefore('div'); //div태그 앞에 위치하게함.
+  })
+</script>
+</head>
+<body>
+      <!-- <h1>DOMTest</h1> (4)-->
+  <div>
+      <!--  <h1>jQueryTest</h1> (2)-->
+       <h1>안녕하세요?</h1>
+      <!--  <h1>jQueryTest</h1> (1)-->
+  </div>
+     <!-- <h1>DOMTest</h1> (3) -->
+  <h1>반가워요!</h1>
+  <img src="../picCats/Persian.jpg">
+</body>
+</html>

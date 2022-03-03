@@ -1,0 +1,11 @@
+package anno3;
+/*
+ *@Resource
+ *@Autowired 
+ */
+public class HomeController {
+
+	private Camera camera2;
+	private Camera camera3;
+	private Camera camera4;
+}

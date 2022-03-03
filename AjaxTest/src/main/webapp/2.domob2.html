@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2.domob2.html(객체 생성 방법-2)</title>
+<script>
+function test(){
+	//alert("연습중");
+	//형식) var 객체명=new Object();//형이 정해져 있지 않다.->어떠한 대상도 저장이 가능
+	//		Student st=new Student();//학생만 저장
+	var mem=new Object();//객체명.속성명=저장할값=>따라서 자동으로 자료형이 결정된다.
+	mem.id=1234;//private int id=1234;=>자바의 경우
+	mem.name="테스트";//String name="테스트";=>자바의 경우
+	mem.hobby="바둑";
+	mem.sung="남자";
+	
+	//수정의미
+	//Setter Method->public void setId(int id){this.id=id;}=>자바
+	//형식) 객체명.함수명=function(매개변수){this.속성명=값}=>자바스크립트 매개변수O
+	mem.setId=function(id){//익명함수이용
+		this.id=id;
+	}
+	mem.setHobby=function(hobby){//public void setHobby(String hobby){~}
+		this.hobby=hobby;//mem.hobby="음악감상";
+	}
+	//수정된 값을 반환함
+	//Getter Method->public 반환값 get멤버변수명(){return this.멤버변수명}=>자바
+	//형식)객체명.함수명=function(){return this.속성명} ->자바스크립트 매개변수X
+	mem.getHobby=function(){
+		return this.hobby;
+	}
+	//public String toString(){~}
+	 mem.toString=function(){
+		 return this.id+","+this.name+","+this.hobby+","+this.sung;
+	 }
+	//객체명.호출할 함수명(저장할값)
+	 mem.setHobby("음악감상");
+	 alert(mem.toString());
+}
+</script>
+</head>
+<body onload="test()">
+
+</body>
+</html>

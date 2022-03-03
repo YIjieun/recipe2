@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>05.event.html</title>
+<script>
+  $(function(){
+	  /*
+	  event객체->이벤트를 발생시킨 객체에 대한 정보를 가지고 있는 객체(클릭한 좌표값,마우스버튼 누른경우)
+	 */
+	  // $('img').bind('dblclick',function(event){//<->unbind()
+	 // $('img').on('dblclick',function(event){//<->off()
+	$('img').one('dblclick',function(event){//딱 한번만 실행시키고 자동종료->one() 
+		  //alert('이미지 더블클릭')
+		  var target=$(event.target) //$(this)같음.이벤트를 발생시킨 대상자에 대한 정보를 가지고 있는 속성
+		  //var target=$(this);
+		  alert(target.width()+","+target.height());//120,120
+		  target.width(target.width()*2);//width가 넓어지면 jeight도 같이 커짐. 더블클릭하면 이미지가 2배됨.
+		  //형식2) (이벤트발생대상자 선택자).unbind('해제시킬 이벤트종류명')
+		  //형식3) (이벤트발생대상자 선택자).unbind()->모든 이벤트 연결이 다 끊어진다.
+		// target.unbind() //target.unbind('dblclick')
+		 // target.off();//target.off('dblclick');//on이벤트시 이벤트 한번하고 해제
+	  })
+	  $(document).on('mouseover',function(e){
+		  $('.posX').text(e.pageX);//e.pageX->x좌표값
+		  $('.posY').text(e.pageY);//e.pageY->y좌표값
+	  })
+  })
+</script>
+</head>
+<body>
+	<img src="../picCats/Persian.jpg" >
+	<p>x:<span class="posX">0</span></p>
+	<p>y:<span class="posY">0</span></p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="166"/>
+		<item key="DIALOG_Y_ORIGIN" value="64"/>
+		<item key="DIALOG_WIDTH" value="613"/>
+		<item key="DIALOG_HEIGHT" value="645"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\webtest\8.spring\5일차(어노테이션 마무리 및 SpringMVC 프로그래밍 개요및 작성법)\1일차(환경설정 및 스프링 작성법)"/>
+			<item value="C:\webtest\8.spring\4일차(Spring의 JDBC Programming,어노테이션)\4일차(Spring의 JDBC Programming,어노테이션)(최종)\SpringTest4(anno)"/>
+			<item value="C:\webtest\8.spring\4일차(Spring의 JDBC Programming,어노테이션)\SpringTest4"/>
+			<item value="C:\webtest\8.spring\4일차(Spring의 JDBC Programming,어노테이션)\SpringTest3(db)"/>
+			<item value="C:\webtest\8.spring\1일차(환경설정 및 스프링 작성법)\SpringTest2"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

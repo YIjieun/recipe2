@@ -1,0 +1,70 @@
+관리자로 로그인을 한다.
+
+SQL> conn sys/sys12345 as sysdba
+연결되었습니다.
+SQL> create user test identified by test;
+
+사용자가 생성되었습니다.
+
+SQL> grant connect,resource,create view to test;
+
+권한이 부여되었습니다.
+
+SQL> conn test/test
+연결되었습니다.
+SQL> select * from tab;
+
+선택된 레코드가 없습니다.
+
+SQL>
+create table board1(
+num number primary key,
+writer varchar2(20) not null,
+subject varchar2(100) not null,
+email varchar2(50) not null,
+content varchar2(4000) not null,
+passwd varchar2(10) not null,
+reg_date Date,
+ref number,
+re_step number,
+re_level number
+);
+
+SQL>
+CREATE TABLE reply_board1
+(
+reboard1_num NUMBER(5) NOT NULL,
+writer_id VARCHAR2(20) NOT NULL,
+reg_date DATE  NOT NULL,
+content VARCHAR2(300) NOT NULL,
+num NUMBER(5)  NOT NULL
+);
+
+SQL>
+ALTER TABLE reply_board1 ADD CONSTRAINT  XPKreply_board1 PRIMARY KEY (reboard1_num);
+ALTER TABLE reply_board1 ADD (CONSTRAINT  R_72 FOREIGN KEY (num) REFERENCES board1(num));
+
+/*
+CREATE SEQUENCE num_seq
+	INCREMENT BY 1
+	START WITH 1
+	NOMAXVALUE
+	NOCYCLE
+	NOCACHE; */
+
+SQL>
+CREATE SEQUENCE reboard1_num_seq
+	INCREMENT BY 1
+	START WITH 1
+	NOMAXVALUE
+	NOCYCLE
+	NOCACHE;
+
+SQL>
+create VIEW board1_view
+ AS 
+select a.*, x.comment_count from 
+board1 a left outer join 
+(select num,count(num) comment_count from reply_board1 group by num) x 
+on a.num = x.num 
+order by a.num desc;

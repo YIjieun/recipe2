@@ -1,0 +1,32 @@
+package anno2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
+
+//문자를 전송=>기간을 정하기
+public class SystemMoniter {
+	
+	private long periodTime;//기간
+	//has a 관계
+
+	private SmsSender sender;// byType으로 객체를 자동으로 넣어준다.
+
+	//Setter Method를 이용
+	public void setPeriodTime(long periodTime) {
+		this.periodTime = periodTime;//this.periodTime=10;
+		System.out.println("setPeriodTime() 호출됨.");
+	}
+	@Required //호출을 안하면 에러나오게 설정, 디버깅용
+	@Autowired //byType-자동으로 해당 티입의 객체를 찾아서 넣어주는 어노테이션(=주입(inject))
+	public void setSender(SmsSender sender) {//callByRef
+		this.sender = sender;
+		System.out.println("setSender() 호출됨.");//sender.toString()
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "SystemMoniter[periodTime="+periodTime
+											+", sender="+sender+"]";
+	}
+}

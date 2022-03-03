@@ -1,0 +1,11 @@
+package anno5;
+
+/*
+ * 빈즈에 관련된 클래스가 30개 이상
+ * 
+ *  <bean id="camera" class="anno5.Camera"/>
+ *  ,,,,,
+ * 
+ */
+
+public class Camera {}

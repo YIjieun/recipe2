@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                                                       maximum-scale=1.0,minimum-scale=1.0,
+                                                       user-scalable=no">
+ 
+    <title>jQuery mobile 예제</title>
+    <!-- mobile css->jquery(1.8~1.11)->mobile jquery(1.4.5) -->
+    <link href="../mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+    <style>
+	    .ui_button-width{/*임의로 버튼의 넓이를 지정*/
+	    	width:200px;
+	    }
+	    .ui-table-width{ /*테이블 내부의 버튼의 넓이를 지정*/
+	    	width:100%;
+	    }
+    </style>
+    <script type="text/javascript" src="../mobile/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../mobile/jquery.mobile-1.4.5.min.js"></script>
+
+  </head>
+  <body>
+     <div  data-role="page">
+            <div data-role="header">
+                   <h1>Button의 크기 및 배치방법</h1>
+            </div>
+            <!-- data-role="button" 버튼생성  -->
+           <div data-role="content">
+           <!-- 1.브라우저의 폭에 맞게 100% 적용이 되는 버튼이 생성 -->
+                  <a href="#" data-role="button">버튼1</a>
+                  <!--2. 스타일을 지정해서 버튼의 넓이를 설정가능  -->
+                  <table class="ui-table-width">
+                      <tr>
+                          <td><a href="#" data-role="button">버튼2</a></td>
+                          <td><a href="#" data-role="button">버튼3</a></td>
+                      </tr>
+                  </table>
+                  <!-- 3. 버튼의 넓이를 지정(브라우저의 넓이와 상관없이 버튼 글자 길이에 맞게 마주어서
+                  									버튼의 폭을 지정?
+                  									1)data-inline="true"(버튼의 글자길이에 맞게 폭이 설정)
+                  									2) 스타일을 선언하고 강제로 적용(버튼의 길이하고는 상관이 없다.)
+                  									 -->
+                  <a href="#" data-role="button" data-inline="true">버튼4</a>
+                  <a href="#" data-role="button" class="ui_button-width">버튼5</a>
+                  <p>jQuery Mobile page구성</p>
+            </div>
+           <div data-role="footer">
+                   <h1>화면하단</h1>
+            </div>
+     </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

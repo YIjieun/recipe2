@@ -1,0 +1,17 @@
+package studentdb;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+//RowMapper인터페이스->select구문을 실행(mapRow()호출)=>DTO에 담아서 결과를 리턴
+//RowMapper<BoardVO>=>형변환을 시켜서 받을려고 제너릭을 준거임
+public class StudentRowMapper implements RowMapper<Student> {
+	
+	@Override
+	public Student mapRow(ResultSet rs, int rowNum) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

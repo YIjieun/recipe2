@@ -1,0 +1,14 @@
+package anno5;
+
+import org.springframework.stereotype.Component;
+
+/*
+ * 빈즈에 관련된 클래스가 30개 이상
+ * 
+ *  <bean id="camera" class="anno5.Camera"/>=>수동으로 등록하는 방식
+ *  ,,,,,
+ * 
+ * @
+ */
+@Component
+public class Camera {}

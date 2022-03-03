@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!-- (1)byType을 사용하지 않은경우 반드시 <property>태그를 사용해야한다.
+<bean name="systemMoniter" class="spring10.SystemMoniter">
+       <property name="call">
+           <ref bean="PhoneCall" />
+       </property>
+</bean>
+ -->
+ <bean name="systemMoniter" class="spring10.SystemMoniter"
+ 			autowire="byType">
+ </bean>
+<bean name="phonecall" class="spring10.PhoneCall" />
+
+</beans>

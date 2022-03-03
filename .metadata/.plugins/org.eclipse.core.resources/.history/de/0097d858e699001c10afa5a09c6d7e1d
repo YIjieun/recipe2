@@ -1,0 +1,48 @@
+package studentdb;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+//DB접속해서 crud 할 수 있는 클래스(StudentDAO클래스)
+public class StudentJDBCTemplate implements StudentDAO {
+
+	private DataSource ds;//DB접속->Bean.xml에서 불러다 사용
+	
+	@Override
+	public void setDataSource(DataSource ds) {
+		// TODO Auto-generated method stub
+		this.ds=ds;
+	}
+
+	@Override
+	public void create(Integer id, String name, Integer age) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Student getStudent(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> listStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Integer id, Integer age) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

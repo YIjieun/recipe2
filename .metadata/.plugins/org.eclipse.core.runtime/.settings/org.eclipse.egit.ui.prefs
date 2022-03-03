@@ -1,0 +1,7 @@
+BranchProjectTracker__C\:\\Users\\jieun\\git\\repository2\\.git_hotfix=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects>\r\n<project>\\jspStudy</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\jieun\\git\\repository2\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects>\r\n<project>\\jspStudy</project>\r\n</projects>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Merge remote-tracking branch &apos;origin/master&apos;&\#x0A;&\#x0A;Conflicts\:&\#x0A;&\#x09;jspStudy/src/main/webapp/abc/imsi.jsp&\#x0A;</message>\r\n<message>imsi.jsp modified on Local repository</message>\r\n<message>push branch &apos;Master&apos;</message>\r\n<message>Merge branch &apos;hotfix&apos;&\#x0A;&\#x0A;Conflicts\:&\#x0A;&\#x09;jspStudy/src/main/webapp/hello.jsp&\#x0A;</message>\r\n<message>hotfix add hello.jsp source code</message>\r\n<message>master branch change a code</message>\r\n<message>hello.jsp success modified</message>\r\n<message>create project&\#x0A;create name print</message>\r\n</messages>
+eclipse.preferences.version=1
+repositories_view_filters=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<FilterCache/>
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300

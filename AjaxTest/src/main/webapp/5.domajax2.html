@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax의 개요 및 작성법(xhr객체)</title>
+<script>
+    var httpRequest=null;//xhr객체를 저장할 변수(전역변수의 성격)
+  
+  function getXHR(){
+	  if(window.XMLHttpRequest){
+		  /*
+		  var xhrObject=new XMLHttpRequest();//객체를 생성=->반환
+		  return xhrObject; */
+		  return new XMLHttpRequest();
+	  }
+  }
+  //2)요청을 받아서 처리해주는 함수
+  function load(url){//2.요청문서를 매개변수로 전달받아서 서버에 요청해주는 함수
+	  //1.xhr객체를 구해주는 구문
+	  httpRequest=getXHR();
+      alert(httpRequest);
+      //2.서버요청할 준비->콜백함수를 지정(ex 자동응답기,문자서비스)
+      //2.형식)xhr객체명.onreadystatechange=콜백함수명;// ()(X)->함수이름만 사용
+      httpRequest.onreadystatechange=viewMessage;
+      //3.xhr객체명.open(3개의 매개변수를 지정)
+      //1)요청방식(get or post) 2.요청문서명(url) 3)처리방식(비동기방식(true) or 동기방식)
+      //비동기방식->카톡,메일보내기(상대방이 결과를  보내주는것와 상관없이 다른일을 할 수 있는 방식 )
+      httpRequest.open("GET",url,true);
+      //4.xhr객체명.send(null or 매개변수명)//서버에게 특별히 매개변수를 전달할 필요가 있을때
+      httpRequest.send(null);
+  }
+  //3)서버로부터 처리결과를 받아서 출력시켜주는 함수(=콜백함수)
+  function viewMessage(){
+	  //alert("viewMessage()호출됨");
+	  //1)서버가 클라이언트의 요청을 다 받았는지 확인?->readyState=4(1,~3일 부분만 요청받은경우)
+	  if(httpRequest.readyState==4){
+		  //2)서버가 클라이언트에게 데이터를 다 전송했는지를 체크
+		  if(httpRequest.status==200){
+			  //텍스트(text)->responseText이용 xml->responseXml속성을 이용
+			  alert(httpRequest.responseText);
+		  }else{//404(페이지 X) 500(문법에러),403(접근금지)
+			  alert('실패:'+httpRequest.status);
+		  }
+	  }
+  }
+</script>
+</head>
+<body>
+  <h2>텍스트파일에 대한 한글처리방법</h2><!-- 1).이벤트발생 -->
+  <input type="button" value="simple.txt" onclick="load('simple.txt')">
+  <input type="button" value="simple2.txt" onclick="load('simple2.txt')">
+  <input type="button" value="simple.jsp" onclick="load('simple.jsp')">
+  <input type="button" value="simple2.jsp" onclick="load('simple2.jsp')">
+</body>
+</html>
+
+

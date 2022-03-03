@@ -1,0 +1,4 @@
+com.quantum.actions.BookmarkSelectionUtil.bookmark=myoracle
+eclipse.preferences.version=1
+quantum.dialogs.bookmarkwizard.path=C\:\\Tomcat 9.0\\lib\\ojdbc6.jar
+quantum.dialogs.exportquery.path=C\:\\webtest\\8.spring\\1\uC77C\uCC28(\uD658\uACBD\uC124\uC815 \uBC0F \uC2A4\uD504\uB9C1 \uC791\uC131\uBC95)\\myoracle.sql

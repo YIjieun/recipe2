@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringTest4(anno)"/>
+<aop-project name="SpringTest2"/>
+<aop-project name="SpringTest4"/>
+<aop-project name="SpringMVCTest"/>
+<aop-project name="SpringTest"/>
+<aop-project name="SpringTest3(db)"/>
+</aop-reference-model>

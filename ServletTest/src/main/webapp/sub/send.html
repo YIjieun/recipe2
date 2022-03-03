@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이름,주소</title>
+</head>
+<body>
+<!-- 
+action="/웹프로젝트명/실행시킬 서블릿클래스명" (404에러 프로젝트명,서블릿경로 확인)
+method="get" (doGet() 요청문장) post->doPost() 작성
+			  get or post=>service 메서드 작성(둘다 가능)
+			  서블릿 작성할 때 save as or ctrl+c, ctrl+v를 사용하지 말것(환경설정X)
+  -->
+<form action="/ServletTest/GetDate"  method="post">
+	이름:<input type="text" name="name"><p>
+	주소:<input type="text" name="addr"><p>
+ <input type="submit" value="전송">
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" 
+			src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<title>10.input.html(회원가입폼)</title>
+<style>
+	#userid,#age,#pwd1,#pwd2 {width:200px}
+	.msg {color:red;padding-left:2px}
+</style>
+<script type="text/javascript" src="input.js?ver=1">
+</script>
+</head>
+<body>
+	<h2>***간단한 회원 가입폼***</h2>
+ 	<form id="signup" method="post">
+ 		id입력: <input type="text" name="userid" id="userid">
+		<span class="msg" id="id_error">id값은 (필수정보) 입력하세요.</span><br> 	
+		<!-- 나이  -->
+		나이 입력: <input type="text" name="age" id="age">
+		<span class="msg" id="age_error1">나이는 (필수정보) 입력하세요.</span><br> 
+		<span class="msg" id="age_error2">나이는 숫자로 입력하세요.</span><br> 	
+		<!-- 비밀번호 -->
+		비번입력: <input type="password" name="pwd1" id="pwd1">
+		<span class="msg" id="p_error1">비밀번호는 반드시 입력하세요.</span><br> 	
+		<!-- 비밀번호 확인  -->	
+		비번확인: <input type="password" name="pwd2" id="pwd2">
+		<span class="msg" id="p_error2">비밀번호가 불일치합니다.</span><br> 	
+		<input type="button" id="btnSend" value="전송">
+ 	</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+package anno5;
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class HomeController2 {
+
+	@Inject
+	private Camera camera;
+
+	private Camera2 camera2;
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "HomeController[camera2="+camera2+"]";
+	}
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+<!--@Required,@Autowired,@Resource을 사용하기위해서는 빈즈클래스를 등록  -->
+<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+<!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" /> -->
+
+<!-- anno1 -->
+<bean id="camera" class="anno1.Camera">
+     <property name="number" value="30" /> 
+</bean>
+
+<bean id="moniter" class="anno2.SystemMoniter"/>
+<bean id="sender" class="anno2.SmsSender"/>
+<bean id="sender2" class="anno2.SmsSender"/>
+
+<!-- <bean id="smsSender"  class="spring12.SmsSender" /> -->
+
+</beans>

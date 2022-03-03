@@ -1,0 +1,14 @@
+package spring10;
+
+//has a 관계
+public class SystemMoniter {
+	
+	//(1)byType
+	private PhoneCall call;
+
+	public void setCall(PhoneCall call) {//<property name="call"></property>
+		this.call = call;
+		System.out.println("setCall()호출(call)=>"+call);
+	}
+	
+}

@@ -1,0 +1,324 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <title>freeBoard</title>
+	<link rel='stylesheet' href='css/bootstrap.css' />
+    <link rel='stylesheet' href='stylesheets/fb_style.css' />
+   <link rel='stylesheet' href='stylesheets/normalize.css' />
+  <link rel='stylesheet' href='stylesheets/style.css' />
+  <link rel="stylesheet" href="stylesheets/swiper.min.css">
+  <link rel="stylesheet" href="stylesheets/swiper.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+
+</head>
+<body>
+ <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+ <div id="header">
+     <div class="headerCon">
+      <div class="headerTop">
+        <ul class="headerMenu">
+          
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="/mypage">마이페이지</a></li>
+
+        </ul>
+      </div>
+    </div>
+    
+   <div class="m_headerCon">
+    <ul class="m_topMenu">
+         <!-- <li><a class="logoB" href="/"><img class="logo" src="../images/clogo-n.svg" /></a></li> -->
+          <li><a class="logoB" href="/"><img class="logo" src="images/cookk_png.png" /></a></li>
+        <li>
+            <form class="searchF" action="/search" method="get">
+                <input type="search" name="keyword" class="search" placeholder="레시피를 검색 해보세요." />
+                 <input type="image" name="submit" value="submit" src="images/search_png.png" 
+                 						style="width:30px; margin-left:3px; vertical-align:middle"/>
+            </form>
+            <script>
+                $(document).ready(function () {
+                    var keyword = getParameter("keyword");
+
+                    if (keyword) {
+                        $(".search").val(keyword);
+                    }
+                });
+                function getParameter(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+            </script>
+        </li>
+    </ul>
+    
+    <div class="gnbRight">
+        <ul class="gnb">
+            <li><a href="/recipe1">레시피1</a></li>
+            <li><a href="/recipe2">레시피2</a></li>
+            <li><a href="/freeboard">자유게시판</a></li>
+            <li><a href="/event">이벤트</a></li>
+            <!--<li><a href="/edu/detail">서비스</a></li>-->
+          <!--   <li><a href="/mypage">마이페이지</a></li> -->
+        </ul>
+    </div>
+</div><!-- m_headerCon -->
+
+<script>
+    $(document).ready(function () {
+        var sc = $(".gnbRight").offset();
+        //console.log(sc);
+        //console.log($(document).scrollTop());
+
+        $(window).scroll(function () {
+            //console.log($(document).scrollTop());
+            if ($(document).scrollTop() > sc.top) {
+                $(".gnbRight").addClass("menu_fixed");
+            }
+            else {
+                $(".gnbRight").removeClass("menu_fixed");
+            }
+        });
+    });
+
+</script>
+      <div class="gnbCon">
+    <div class="gnbBox">
+        <div class="gnbLeft">
+      <!--  <a href="/"><img class="logo" src="../images/clogo-n.svg" /></a> -->
+             <a href="/"><img class="logo" src="images/cookk_png.png" /></a>
+            <form class="searchF" action="/search" method="get">
+                <input type="text" name="keyword" class="search" placeholder="레시피를 검색 해보세요." />
+                 <input type="image" name="submit" value="submit" src="images/search_png.png" 
+                 						style="width:30px; margin-left:3px; vertical-align:middle"/>
+            </form>
+            <script>
+                $(document).ready(function () {
+                    var keyword = getParameter("keyword");
+
+                    if (keyword) {
+                        $(".search").val(keyword);
+                    }
+                });
+                function getParameter(name) {
+                    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                        results = regex.exec(location.search);
+                    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                }
+            </script>
+        </div>
+        
+        <div class="gnbRight">
+            <ul class="gnb">
+                <li><a href="/recipe1">레시피1</a></li>
+	            <li><a href="/recipe2">쿸투게더</a></li>
+	            <li><a href="/freeboard">자유게시판</a></li>
+	            <li><a href="/event">이벤트</a></li>
+                <!--<li><a href="/edu/detail">서비스</a></li>-->
+                <!-- <li><a href="/mypage">MY</a></li> -->
+            </ul>
+        </div>
+    
+    	</div><!-- gnbBox -->
+	</div> <!-- gnbCon -->
+
+</div><!-- header -->
+    
+    
+	<div class="container con_wrap">
+	
+		
+	
+		<div class="con_box">
+		
+			
+			<div class="con_title">
+				<div>
+					<img src="images/spoon.png"/>
+				</div>
+				<h1><b>쿸투게더</b></h1>
+			</div>
+			<div class="row">
+				<div class="col-md-4"><img src="images/kimbab.jpg" width="250" height="200"/></div>
+				<div class="col-md-4"><img src="images/radish.png" width="250" height="200"/></div>
+				<div class="col-md-4"><img src="images/pizza.jpg" width="250" height="200"/></div>
+		    </div>
+			<span class="btn_write">	
+			    <input type="button" onclick="writeForm.jsp" value="글쓰기">
+			</span>
+			<div class="view_tab">
+				<select>
+					<option>조회순</option>
+					<option>오래된순</option>
+					<option>최신순</option>
+				</select>
+			</div>
+		
+		
+		<div class="table-responsive con_table">
+			<table class="table table-hover" width="800" 
+			cellpadding="0" cellspacing="0" > 
+				<thead>
+			    	<tr height="30"> 
+				      <td>no</td> 
+				      <td>제   목</td> 
+				      <td>작성자</td>
+				      <td>작성일</td> 
+				      <td>조 회</td> 
+			  	  </tr>
+			    </thead>
+			    <tr>
+			    	<td>1</td><td>안녕하세요</td><td>이지은</td>
+			    	<td>22-03-01</td><td>3</td>
+			    </tr>
+			    <tr>
+			    	<td>2</td><td>안녕하세요</td><td>이예은</td>
+			    	<td>22-03-01</td><td>3</td>
+			    </tr>
+			    <tr>
+			    	<td>3</td><td>안녕하세요</td><td>김예린</td>
+			    	<td>22-03-01</td><td>3</td>
+			    </tr>
+			    <tr>
+			    	<td>4</td><td>안녕하세요</td><td>주정운</td>
+			    	<td>22-03-01</td><td>3</td>
+			    </tr>
+			    <tr>
+			    	<td>5</td><td>안녕하세요</td><td>홍지원</td>
+			    	<td>22-03-01</td><td>3</td>
+			    </tr>
+			
+			  <!--  <tr height="30">
+			    <td align="center"  width="50" ></td>
+			    <td  width="250" ></td>
+			    <td align="center"  width="100"> </td>
+			    <td align="center"  width="150"></td>
+			    <td align="center"  width="50"></td>
+			    <td align="center" width="100" ></td>
+			  </tr>-->
+			</table>
+			</div> <!-- table-responsive con_table -->
+			
+			<div class="paging">
+				<ul class="pagination pagination-xs">
+				 	<li><a href="#"> << </a></li>
+				 	<li class="active"><a href="#">1</a></li>
+				 	<li><a href="#">2</a></li>
+				 	<li><a href="#">3</a></li>
+				 	<li><a href="#">4</a></li>
+				 	<li><a href="#">5</a></li>
+				 	<li><a href="#">6</a></li>
+				 	<li><a href="#">7</a></li>
+				 	<li><a href="#">8</a></li>
+				 	<li><a href="#">9</a></li>
+				 	<li><a href="#">10</a></li>
+				 	<li><a href="#"> >> </a></li>
+				 </ul>
+			</div>
+			
+		</div> <!-- conbox -->
+		
+	</div> <!-- container -->
+
+	
+	<div id="footer">
+    <div class="container" >
+    <div class="footerBox" >
+        <div class="footerLeft">
+            <span class="ck">Cookk</span>
+            <ul class="ftmenu1">
+            <!-- <div class="ftR">
+                <p class="customer">고객센터<span class="cthour">오전 10시~오후6시(주말, 공휴일 제외)</span></p>
+                <button type="button" class="kakaoCS" id="kakao-talk-channel-chat-button">카카오톡 문의하기</button>
+            </div> -->
+            <p class="footerTxt">
+                쿸 <br />
+                사업장: 서울특별시 강남구 역삼동 819-10 세경빌딩 3층<br />
+                고객센터: cookk@cookk.com<br />
+                연락처: 070-123-4567<br /><br />
+                Copyright ⓒ 4조 All rights Reserved
+            </p>
+            <p class="m_footerTxt">
+                쿸 <br />
+                사업장: 서울특별시 강남구 역삼동 819-10 세경빌딩 3층<br />
+                고객센터: cookk@cookk.com<br />
+                연락처: 070-123-4567<br /><br />
+                Copyright ⓒ 4조 All rights Reserved
+            </p>
+               <!--  <li><a href="/about">회사소개</a></li> -->
+                <!--<li><a href="#">채용</a></li>-->
+            </ul>
+            <ul class="ftmenu2">
+                <li><a href="/terms" target="_blank">이용약관</a></li>
+                <li><a href="/privacy" target="_blank">개인정보취급방침</a></li>
+                <li><a href="https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2020409035430201403&pageUnit=10&searchCnd=wrkr_no&searchKrwd=4082821450&pageIndex=1"
+                        target="_blank">사업자정보확인</a></li>
+                <li><a href="/pdfs/cookmin_rule.pdf" target="_blank">쿸 규정</a></li>
+                <li><a href="/pdfs/cookmin_guide.pdf" target="_blank">쿸 가이드라인</a></li>
+            </ul>
+        </div>
+      <div class="footerRight" >
+      		<div class="ftR">
+        		<ul>
+        			<li><a href="#"><img src="images/insta.png" alt="인스타그램"/></a></li>
+        			<li><a href="#"><img src="images/facebook.png" alt="페이스북"/></a></li>
+        			<li><a href="#"><img src="images/twt.png" alt="트위터"/></a></li>
+        			<li><a href="#"><img src="images/youtube.png" alt="유튜브"/></a></li>
+        		</ul>
+        	</div>
+
+              <!-- <div class="ftR">
+                <p class="customer">고객센터<span class="cthour">오전 10시~오후6시(주말, 공휴일 제외)</span></p>
+                <button type="button" class="kakaoCS" id="kakao-talk-channel-chat-button">카카오톡 문의하기</button>
+            </div>
+            <p class="footerTxt">
+                더쿡민 | 대표: Hoon Lee | 개인정보보호책임자: Hoon Lee | 사업자등록번호: 408-28-21450<br />통신판매업신고:
+                2020-경기김포-1416 | 사업장: 경기도 김포시 김포한강로2로 113 | 고객센터: thecookmin@kakao.com<br /><br />
+                더쿡민은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 더쿡민의 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
+            </p>
+            <p class="m_footerTxt">
+                더쿡민 | 대표: Hoon Lee | 개인정보보호책임자: Hoon Lee | 사업자등록번호: 408-28-21450 통신판매업신고:
+                2020-경기김포-1416 | 사업장: 경기도 김포시 김포한강로2로 113 | 고객센터: thecookmin@kakao.com<br /><br />
+                더쿡민은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 따라서 더쿡민의 상품, 거래정보 및 거래에 대하여 책임을 지지 않습니다.
+            </p> -->
+        </div>
+    </div>
+</div>
+<div class="m_footer_menu">
+    <ul>
+        <li><a href="/"><img class="icon" src="images/home.svg" /><span>홈</span></a></li>
+        <li><a href="/rsearch"><img class="icon" src="images/loupe.svg" /><span>요리검색</span></a></li>
+        <li><a href="/mypage"><img class="icon" src="images/user.svg" /><span>마이페이지</span></a></li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {
+        var path = window.location.pathname;
+        if (path === "/") {
+            $(".m_footer_menu ul li:nth-child(1) a span").css("color", "#e86416");
+        } else if (path === "/rsearch") {
+            $(".m_footer_menu ul li:nth-child(2) a span").css("color", "#e86416");
+        } else if (path === "/mypage") {
+            $(".m_footer_menu ul li:nth-child(3) a span").css("color", "#e86416");
+        }
+    });
+    </script>
+    
+    </div><!-- wrap -->
+</body>
+</html>

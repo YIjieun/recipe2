@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap 예제</title>
+
+    <!-- 부트스트랩 -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js 
+    	IE의 버전이 낮은 경우에는 html5에 대한 태그가 인식 X->인식을 시켜주는 옵션
+    -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>8.navigationdown.html</h1>
+	<div class="container">
+		<h1>네이게이션+드롭다운</h1>
+           <h4>탭형 네비게이션+드롭다운</h4>
+           <ul class="nav nav-tabs">
+               <li><a href="#">공지사항</a></li>
+               <li><a href="#">자유게시판</a></li>
+               <li><a href="#">Q&A</a></li>
+               <!-- <li><a href="#">사용자</a></li> -->
+               <!-- 네비게이션에 드롭다운을 추가할려면 div태그 대신에 li태그로 묶어줘야 된다. -->
+               <li class="dropdown">
+			         <a data-toggle="dropdown" href="#">사용자</a>
+			          <ul class="dropdown-menu" role="menu">
+			             <li><a href="#">회원로그인</a></li>
+			             <li><a href="#">자유게시판</a></li>
+			             <li><a href="#">설문조사</a></li>
+			             <li class="divider"></li><!-- 분리선 -->
+			             <li><a href="#">관리자</a></li>
+			          </ul>
+               </li>
+           </ul>
+           <br>
+           <h4>알약형 네비게이션+드롭다운</h4>
+           <ul class="nav nav-pills">
+               <li><a href="#">공지사항</a></li>
+               <li><a href="#">자유게시판</a></li>
+               <!-- <li><a href="#">Q&A</a></li> -->
+               <!-- 네비게이션에 드롭다운을 추가할려면 div태그 대신에 li태그로 묶어줘야 된다. -->
+               <li class="dropdown">
+			         <a data-toggle="dropdown" href="#">Q&A
+			         <span class="caret"></span></a><!--class="caret" 드롭다운 화살표표시  -->
+			          <ul class="dropdown-menu">
+			             <li><a href="#">JAVA</a></li>
+			             <li><a href="#">JSP</a></li>
+			             <li><a href="#">Eclipse</a></li>
+			             <li class="divider"></li><!-- 분리선 -->
+			             <li><a href="#">관리자</a></li>
+			          </ul>
+               </li>
+           </ul>
+	</div>
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

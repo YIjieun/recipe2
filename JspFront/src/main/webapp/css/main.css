@@ -1,0 +1,262 @@
+/*
+ pc상태에서 보여주는 스타일시트 화면(main.css)
+ 작성날짜:2021.01.04
+ 작성자:홍길동
+*/
+/* 상단메뉴 부분 좌측상단에 고정*/
+*{
+   margin:0; padding:0;
+   background-color:azure; /*하늘색*/
+}
+
+/*전체 컨테이너 영역(전체 넓이,양쪽여백 설정)*/
+.wrap{
+  width:1000px;/*width:70%; => 양쪽여백 15%+15%=30% */
+  margin:0 auto;/*위 아래여백0,좌우여백은 자동으로 배분이 되라는 옵션(auto)*/
+}
+
+/* pc상태에서는 넓이 768px보다 크면 보이지 않게 설정해주는 요소*/
+.hd2, .sc2, .sc3 {display:none;}
+
+/*로고
+left(x축)->들여쓰기,top(위에서 아래로 이동한 위치) y축
+*/
+h1 {
+ float:left;
+ position:relative;
+ left:3%; /* left:30px;*/
+ top:30px;/* 맨 처음에 나오는 항목의 위치설정*/
+}
+/* 로고를 기준으로 오른쪽으로 배치*/
+.nv1{
+  width:60%;height:50px;/* 이미지위의 선과 맞추기위해서 */
+  float:left;
+  border:1px solid black; /*영역표시 확인용*/
+  position:relative; /* nv2 배치 */
+  left:5%;top:30px;/* y축은 변화X */
+  z-index:5;/*동영상,이미지와 겹치는 경우=>메뉴가 맨앞에 배치(zindex값 큰값)*/
+}
+
+ul{
+  list-style-type:none; /*메뉴의 마크제거*/
+}
+/*1레벨 메뉴 선택시 색깔부여(스타일 적용대상자(태그,클래스선택자:hover)*/
+.main1:hover{  /*SHOPPING*/
+  background-color:mediumpurple;
+  color:white;
+}
+.main2:hover{  /*EVENT*/
+  background-color:mediumpurple;
+  color:white;
+}
+.main3:hover{  /*ABOUT US*/
+  background-color:mediumpurple;
+  color:white;
+}
+/* nv1범위 테두리 내에서의 배치 결정
+ aboluste(shooping글자를 배치) ,relative->shopping을 기준해서 인접한 다른태그를 배치
+*/
+.main1{
+   position:absolute;
+   left:14%;/* 로고문자 기준->테두리->14%정도 오른쪽 이동(x축)*/
+   top:10px;/*테두리에서의 내려온 거리*/
+}
+
+.main2{
+   position:absolute;/* relative=>2레벨메뉴를 기준으로해서 오른쪽배치*/
+   left:43%;
+   top:10px;
+}
+
+.main3{
+   position:absolute;/* relative=>2레벨메뉴를 기준으로해서 오른쪽배치*/
+   right:20%;/* left:67%; 오른쪽테두리 기준으로 오른쪽으로 왼쪽으로 20% 이동 */
+   top:10px;
+}
+/*
+서브메뉴를 안나오게 설정->1)absolute이용->top:-9999를 이용해서 위로 배치
+                                 2)display:none ->block,inline,inline-block
+*/
+.sub{
+   display:none;/* 안보이는 부분은 보이게 설정해서 영역확인한후 최종 설정*/
+   position:absolute;
+   top:40px;
+   left:77px;
+   border:1px solid black; /* 영역설정할때 border속성을 줘서 확인할것*/
+
+}
+.sub li,.sub li a{ /*유형별 제품의 항목들의 색깔은 purple*/
+  z-index:15;
+  color:purple;
+}
+.sub1{
+  display:none;
+  float:right;/*오른쪽에 배치*/
+  position:relative;/*absolute=>좌표값,top,left:100%을 이용해야 한다.)*/
+}
+.nv1 div a {
+   display:inline-block;/* 가로로 정렬이 되면서(inline), with,height을
+                                   줄경우 줄바꿈도 되어야하는 경우에 사용하는 속성*/
+   padding:10px;/*top,right,bottom,left 전부 5px(안쪽여백)*/
+}
+.nv2{
+  width:13%;height:50px;/* nv1과 같은 높이를 유지
+                                      nv1과 nv2사이의 거리,nv2와 오른쪽여백거리 고려
+									   40%-13%=27%/2=13.2%
+  */
+  border:1px solid black;
+  float:right;
+  position:relative;/* nv1을 기준으로 오른쪽 배치*/
+  top:30px;/* nv1과 같은 높이*/
+  right:3%;/* left:?% 계산쉽지않기 때문에 */
+}
+/*상단메뉴2(메뉴항목의 정렬,여백 설정)*/
+.nv2 ul > li{/* 클래스선택자 nv2내부에 있는 모든 ul태그에 있는 바로밑의 li 태그*/
+  float:left;/*왼쪽에 배치*/
+  margin-left:10%;/*상단메뉴1과 상단메뉴2사이의 거리 */
+  margin-top:20px;
+  font-size:11px;
+}
+
+.nv2 ul li a { /* login,Mypage */
+   display:inline-block;
+   padding:5px;
+}
+.nv2 ul li a:hover{
+  background-color:mediumpurple;
+  color:white;
+}
+/* 상단메뉴와 슬라이드 이미지 사이의 거리 설정*/
+.cycle-slideshow{
+   position:relative; /*위의 header을 기준 바로 밑에 배치 */
+   top:100px; /* 80px->nv2의 영역과 겹치기때문에 */
+   z-index:1;
+}
+
+.cycle-slideshow  img{ /* 이미지 3개 전부 */
+  height:350px;/*400->350px 크기 줄임*/
+}
+/* 슬라이드 이미지 바로밑에 영역(베스트셀러가 나오는 부분)*/
+.at1{
+   /*폭->%계산,높이 px로 계산*/
+   width:60%;height:250px;/* 450px->200px로 줄일예정*/
+   border:1px solid black;
+   float:left;/*왼쪽정렬*/
+   position:relative;
+   left:3%;top:100px;/*테두리 영역의 위치 설정*/
+   z-index:3;/*이미지 동영상과 겹치는 경우*/
+}
+/*이미지의 크기와 다른 이미지의 정렬방식 inline-block
+ 영역설정내부에 또 다른 position을 설정할 수 있다.*/
+.d1>figure>img{
+   width:200px;height:200px;
+   border:1px solid black;
+   display:inline-block;/*가로방향 정렬*/
+   position:absolute;
+   top:50px;/*이미지와 이미지의 설명글을 구분(left:0)*/
+   z-index:6;
+}
+.d2>figure>img{
+   width:200px;height:200px;
+   border:1px solid black;
+   display:inline-block;
+   position:absolute;
+   top:50px;left:200px;/*2번째 이미지 나오는 시작점*/
+   z-index:6;
+}
+.d3>figure>img{
+   width:200px;height:200px;
+   border:1px solid black;
+   display:inline-block;
+   position:absolute;
+   top:50px;left:400px;/*3번째 이미지 나오는 시작점*/
+   z-index:6;
+}
+/*이미지 소개글자 정렬,크기 지정*/
+.fc1{
+   font-size:11px;
+   float:left;/*왼쪽부터 정렬*/
+   position:relative;
+   left:5px;/* 2번째소개글이미지가 가려지기때문에 왼쪽에서 5px거리를 둠*/
+}
+.fc2{
+   font-size:11px;
+   float:left;
+   position:relative;
+   left:20px;
+}
+.fc3{
+   font-size:11px;
+   float:right;/* 오른쪽에 치우쳐서 맞춰준다*/
+   position:relative;
+   right:35px;/* left:55px;->float:left */
+}
+.at2{
+ width:33%;height:250px;/*.at1과 같은 위치설정,40%-7%=33%(3.5%)*/
+ border:1px solid black;
+ float:right;
+ position:relative;
+ top:100px;
+}
+.at2 > img{
+  width:170px;height:200px;
+  display:inline-block;
+  position:relative;
+  top:20px;
+  z-index:6;
+}
+#dv1{
+  display:inline-block;
+  position:relative;
+  top:-180px;
+  z-index:9;/*dv1과 이미지 겹칠때 우선순위 dv1을 주기위해서*/
+  left:130px;
+}
+/*동영상의 위치,여백을 설정*/
+.at3 > embed{
+  position:relative;
+  width:450px;height:300px;/*동영상 크기 그대로*/
+  top:100px;/* 150px(margin-top)*/
+  margin:50px;/*margin:30px 주면 정확한 경계선에 도달*/
+}
+/*화장품광고 동영상 오른쪽에 배치->float:right*/
+.at4>img{
+ float:right;
+ width:450px;height:300px;
+ position:relative;
+ top:-255px;/*300->270보다 적은숫자로 설정*/
+ right:20px;/* left:0px; 음수? */
+ /*오른쪽경계선을 기준으로 왼쪽으로 20px로 이동*/
+}
+/*footer부분 설정 */
+.ft1{
+clear:both; /*위의 설정한 배치속성 초기화 설정*/
+border:1px solid black;
+position:relative;
+height:100px;
+margin:0 auto; /* 양쪽의 폭은 자동으로 조절*/
+top:-200px;
+}
+
+.nv3{
+  position:relative;
+  top:20px;/*테두리에서의 적절한 거리유지*/
+}
+
+.nv3 ul > li{
+  float:left;
+  margin-left:4.3%;/*소수점도 가능하는것을 보여주기위해서*/
+}
+.nv4{
+  position:relative;
+  top:40px; /* 2행을 만들기위해서 */
+}
+
+.nv4 ul{
+  list-style-type:none;
+}
+.nv4 ul > li{
+  float:left;
+  margin-left:4%;
+  font-size:11px; 
+}

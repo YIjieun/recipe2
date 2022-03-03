@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,
+                                                   maximum-scale=1.0,minimum-scale=1.0,
+                                                   user-scalable=no">
+<title>jQuery Mobile예제</title>
+<link href="../mobile/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+<script type="text/javascript" src="../mobile/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../mobile/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<!--  
+    data-transition="slide"(오른쪽->왼쪽으로 페이지 이동)->back버튼을 사용X
+                              "slideup"(아래->위쪽으로 페이지 이동)
+                              "slidedown"(위->아래쪽으로 페이지 이동)
+                              "pop"(팝업창 효과)
+                              "flip" (회전효과)
+                              "fade"=>fade효과
+-->
+<div  data-role="page" id="first_page">
+	<div data-role="header">
+	   <h1>화면전환</h1>
+	</div>
+	<div data-role="content">
+	    <ul data-role="listview">
+	       <li><a href="#second_page" data-transition="slide">ListItem1</a></li>
+	       <li><a href="#second_page" data-transition="slideup">ListItem2</a></li>
+	       <li><a href="#second_page" data-transition="slidedown">ListItem3</a></li>
+	       <li><a href="#second_page" data-transition="pop">ListItem4</a></li>
+	       <li><a href="#second_page" data-transition="flip">ListItem5</a></li>
+	       <li><a href="#second_page" data-transition="fade">ListItem6</a></li>
+	    </ul>
+	</div>
+   <div data-role="footer">
+	   <h1>화면하단</h1>
+	</div>
+</div>
+<!-- 두번째 페이지 -->
+<div  data-role="page" id="second_page">
+	<div data-role="header">
+	   <h1>두번째 페이지</h1>
+	</div>
+	<div data-role="content">
+	   <a href="#first_page" data-role="button" data-theme="b">첫번째 화면으로 이동</a>
+	</div>
+   <div data-role="footer">
+	   <h1>화면하단</h1>
+	</div>
+</div>
+
+</body>
+</html>

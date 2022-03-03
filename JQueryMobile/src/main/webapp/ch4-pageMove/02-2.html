@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery mobile 예제</title>
+<!--  
+     =>jqueyrmobile에 대한 라이브러리를 작성하지 않아도 된다.(공유하기 때문에)
+     02.html파일의 data-ajax="true"부분 때문에 가능.
+-->
+  </head>
+  <body>
+<div  data-role="page">
+	 <div data-role="header">
+     	<h1>두번째 페이지</h1>
+        <!--
+         	이전으로 되돌아가는 기능을 부여하는 속성(data-rel="back") 
+        	history.back(),history.go(-1)와 같은 기능
+        -->
+         	<a data-icon="arrow-l" data-rel="back">이전</a>
+     </div>
+     <div data-role="content">
+      	<p>Hello Second Page! </p>
+     </div>
+    <div data-role="footer">
+     	<h1>화면하단</h1>
+	</div>
+</div>
+</body>
+</html>

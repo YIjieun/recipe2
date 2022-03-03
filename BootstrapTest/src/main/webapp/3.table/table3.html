@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bootstrap 예제</title>
+
+    <!-- 부트스트랩 -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js 
+    	IE의 버전이 낮은 경우에는 html5에 대한 태그가 인식 X->인식을 시켜주는 옵션
+    -->
+    <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h3>테이블의 부트스트랩 적용 예제3</h3>
+    	<!--  
+	        7.class="table-responsive
+	        =>브라우저의 길이에 맞춰 테이블의 크기 및 내용부분또한 가변적으로 변함
+	        =>테이블 태그 전체를 <div class="table-responsive">로 깜싸준다.
+	        =>폭이 줄어들면 자동으로 스크롤바가 생성=>td의 내용이 적으면 반영이 안된다.
+    -->
+    <div class="container">
+        <div class="table-responsive">
+    	<table class="table">
+    		<thead>
+    			<tr>
+    				<td>번호</td><td>글제목</td><td>작성자</td>   			
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>1</td><td>게시판의 글제목게시판의 글제목게시판의 글제목게시판의 글제목게시판의 글제목</td><td>홍길동</td>   			
+    			</tr>
+    				<tr>
+    				<td>2</td><td>게시판의 글제목2게시판의 글제목2게시판의 글제목2게시판의 글제목2게시판의 글제목2</td><td>테스트</td>   			
+    			</tr>
+    				<tr>
+    				<td>3</td><td>게시판의 글제목3게시판의 글제목3게시판의 글제목3게시판의 글제목3게시판의 글제목3</td><td>임시3</td>   			
+    			</tr>
+    		</tbody>
+    	</table>
+     </div>
+	<!-- 8.class="table-bordered table hover" 
+              테이블의 넓이는 기본적으로 100%사용하면서 테이블의 테두리에 선 적용,
+             마우스를 갖다댄 행은 색상적용 시켜주는 클래스 선택자)-->
+      <h4 class="text-success text-center">class="table-bordered,table-hover를 적용</h4>
+      <table class="table table-bordered table-hover">
+         <thead>
+            <tr class="success">
+                <td>번호</td><td>글제목</td><td>작성자</td>
+            </tr>
+         </thead>
+            <tr class="warning">
+                <td>1</td><td>게시판의 글제목</td><td>홍길동</td>
+            </tr>
+            <tr>
+                <td>2</td><td class="text-warning">게시판의 글제목2</td><td>테스트</td>
+            </tr>
+            <tr>
+                <td>3</td><td>게시판의 글제목3</td><td class="text-danger">임시3</td>
+            </tr>
+      </table>
+      <p> 
+    </div>
+
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
+</html>

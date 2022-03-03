@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+<!-- spring3 -->
+<bean id="moniter" class="spring3.SystemMoniter"
+           p:periodTime="20" p:sender-ref="smsSender">
+    <!-- (1)
+    <property name="periodTime">
+        <value>10</value>
+    </property>
+    <property name="sender">
+          <ref bean="smsSender" />
+    </property> 
+    -->
+</bean>
+<bean id="smsSender" class="spring3.SmsSender"/>
+<!-- spring4 c네임스페이스를 이용-->
+<bean id="moniter2" class="spring4.SystemMoniter"
+			c:periodTime="30" c:sender-ref="smsSender2">
+    <!-- 
+    <constructor-arg value="10" />
+    <constructor-arg ref="smsSender2" /> 
+    -->
+</bean>
+
+<bean id="smsSender2"  class="spring4.SmsSender" />
+
+<!-- spring5{익명의 빈즈객체를 전달받는 방법),네임스페이스를 혼용도 가능  -->
+<bean id="moniter3" class="spring5.SystemMoniter"
+			p:periodTime="50">
+	<property name="sender">
+		<!-- <ref bean="smSender3"/> 내부에서는 id가 필요X -->
+		<bean class="spring5.SmsSender" >
+			<constructor-arg value="true">
+			</constructor-arg>
+		</bean>
+	</property>
+</bean>
+
+<!-- 
+<bean id="smsSender3"  class="spring5.SmsSender" >
+	<constructor-arg value="true"></constructor-arg>
+</bean> 
+-->
+
+<!-- spring6(name속성, List형의 객체를 가져올때 사용하는 태그명 
+		<list>태그로 묶어준다.
+-->
+<bean name="performanceMoniter" class="spring6.PerformanceMoniter"
+			scope="prototype">
+	<property name="number">
+		<list>
+			<value>0.2</value>
+			<value>0.4</value>	
+		</list>
+	</property>
+</bean>
+
+<!--spring7  -->
+ <bean name="customer"  class="spring7.Customer">
+     <property name="subSet">
+       <set>
+         <value>1</value>
+         <value>4</value>
+       </set>
+     </property>
+ </bean>
+
+</beans>
+
+
